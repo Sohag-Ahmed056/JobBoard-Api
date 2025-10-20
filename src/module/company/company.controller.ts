@@ -5,6 +5,7 @@ import { companyService } from "./company.service";
 const createCompany=async(req:Request, res:Response)=>{
 
     const company = await companyService.createCompany(req.body);
+    console.log(company);
 
     return res.status(201).json(company);
 }

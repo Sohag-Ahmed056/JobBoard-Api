@@ -2,7 +2,8 @@ import { Prisma, PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient();
 
-const createCompany =async (payload: any)=>{
+const createCompany =async (payload: Prisma.CompanyCreateInput)=>{
+    console.log("Payload in service:", payload);
 
     const company = await prisma.company.create({
         data: payload
